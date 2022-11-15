@@ -1,0 +1,21 @@
+int sensorValue;								//Menyetel Variabel
+
+void setup(){
+  pinMode(A0, INPUT);								//pin untuk LDR
+  pinMode(3, OUTPUT);								//pin untuk LED
+  Serial.begin(9600);								//starts the serial monitor
+}
+
+void loop(){
+  //54-974
+  sensorValue = analogRead(A0);						//membaca nilai dari sensor LDR
+  Serial.println(sensorValue);						//menampilkan nilai sensor ke konson
+  
+  // map the sensor reading to a range for the LED
+  // int fade = map(sensorValue, 54, 974, 255, 0);		
+  int fade = map(sensorValue, 0, 1023, 0, 255);		
+  // Serial.println(fade);
+  // 
+  analogWrite(3, fade);
+  delay(1000); 										// delay 100 milisecon
+}

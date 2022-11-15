@@ -1,0 +1,64 @@
+//Linke Thinker Cat : https://www.tinkercad.com/things/kD6NWQx0Dk2-lcd-with-potensiometer/editel?sharecode=mYVv2YeFA5MVv61X2Fm1DS8sb9lwJU2OzgDHA4NDEOY
+
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(1, 2, 4, 5, 6, 7);
+
+void setup(){
+  lcd.begin(16, 2); 
+}
+
+void loop(){
+  lcd.print("Hai orang baik");
+  delay(2000);
+  lcd.setCursor(0, 1);
+  lcd.print("Apa kabarmu?");
+  delay(3000);
+  lcd.clear();
+  
+  lcd.print("Tetap semangat");
+  lcd.setCursor(0, 1);
+  lcd.print("ya cantik");
+  delay(4000);
+  lcd.clear();
+  
+  lcd.print("Walau kadang..");
+  delay(3000);
+  lcd.clear();
+ 
+  lcd.print("Laporan kaya");
+  lcd.setCursor(0, 1);
+  lcd.print("ngak hasis-habis");
+  delay(4000);
+  lcd.clear();
+  
+  lcd.print("Hehehe..");
+  delay(4000);
+  lcd.clear();
+  
+  lcd.print("Tetap jaga");
+  lcd.setCursor(0, 1);
+  lcd.print("kesehatan");
+  delay(2500);
+  lcd.clear();
+  
+  lcd.print("Ibadahnya");
+  lcd.setCursor(0, 1);
+  lcd.print("juga");
+  delay(3000);
+  lcd.clear();
+  
+  lcd.print("Yakin sesudah");
+  lcd.setCursor(0, 1);
+  lcd.print("kesulitan itu");
+  delay(3000);
+  lcd.clear();
+  
+  lcd.print("Ada kemudahan");
+  delay(4000);
+  lcd.clear();
+  
+  lcd.print("       :)       ");
+  delay(6000);
+  lcd.clear();
+}

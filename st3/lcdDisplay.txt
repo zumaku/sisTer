@@ -1,0 +1,21 @@
+#include<LiquidCrystal_I2C_Hangul.h>
+#include<Wire.h>
+
+LiquidCrystal_I2C_Hangul lcd(0x27,16,2); //LCD
+
+void setup() {
+  Serial.begin(9600);
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("ZUMA");
+  // lcd.print("Hello World!");
+  pinMode(A1, INPUT);
+}
+
+void loop() {
+  int nilai = analogRead(A1);
+  lcd.setCursor(1, 4 );
+  lcd.print(nilai);
+
+}
