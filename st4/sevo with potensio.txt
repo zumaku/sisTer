@@ -1,0 +1,19 @@
+#include <Servo.h>                          //library servo
+
+Servo myservo;                              // membuat variabel servo untuk dikendalikan
+int pos = 0;                                // deklarasi variabel untuk posisi sudut
+int value, posisi;                          // deklarasi vaiabel untuk value dan posisi
+
+void setup(){
+  myservo.attach(9);                        //deklarasi servo pada pin 9
+  pinMode(A2, INPUT);                       // inisialisasi pin A@ sebagai input
+  Serial.begin(9600);	
+}
+
+void loop(){
+  value = analogRead(A2);                   // set value dengan nilai dari pin potensiometer (A2)
+	posisi = map(value, 0, 1023, 0, 180);     // set map yang disimpan ke dalam var posisi
+  Serial.println(posisi);
+  myservo.write(posisi);                    // output ke motor servo
+ 	delay(15);                                // delay 15ms
+}

@@ -1,0 +1,33 @@
+// Visit priject at https://www.tinkercad.com/things/2zWfbGJV3wU-mighty-blad-bigery/editel?sharecode=-L8VMnHBBEDcm4VONa8IunYSFqsfBv_CUb3qeSKFSKc
+#include <Servo.h>
+int lightval1, lightval2;
+int lightpin1=A0;
+int lightpin2=A2;
+int servopin=9;
+int angle;
+Servo myservo;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(lightpin1,INPUT);
+  pinMode(lightpin2,INPUT);
+  myservo.attach(servopin);
+  pinMode(servopin,OUTPUT);
+}
+
+void loop() {
+  lightval1=analogRead(lightpin1);
+  Serial.println(lightval1);
+  lightval2=analogRead(lightpin2);
+  Serial.println(lightval2);
+  delay(10);
+  
+  if(lightval1 < 920 && lightval2 > 920){
+   myservo.write(0);
+  }else if(lightval2 < 920 && lightval1 > 920){
+   myservo.write(180);
+  } else{
+   myservo.write(90);
+  }
+
+}
